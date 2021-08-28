@@ -11,3 +11,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/*--my styling starts here--*/
+.container {
+  display: flex;
+  justify-content: center;
+  background-color: grey;
+  border-radius: 20px;
+  margin: 0% 5% 0%;
+}
+.team-positions {
+  text-align: start;
+  margin: 2% 8% 2%
+}
+
+.profile-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-container {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  border: 1px solid grey;
+  border-radius: 15px;
+  padding: 0% 5% 0%;
+}
+.user-details {
+  padding: 20px;
+  border-radius: 20px;
+}
