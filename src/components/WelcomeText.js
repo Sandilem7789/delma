@@ -5,7 +5,7 @@ const WelcomeText = () => {
     return (
         <div >
             <h4 className="welcome-text">
-                Funda i-webdevelopment <br /> lwesiZulu
+                Funda i-webdevelopment <br /> ngesiZulu
              </h4>
         </div>
     )

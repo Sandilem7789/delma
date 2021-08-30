@@ -39,7 +39,8 @@ h4 {
 .blog-paper, .video-paper, .podcast-paper {
   border-radius: 5px;
   border: 1px solid black;
-  height: 150px
+  height: 150px;
+  box-shadow: 10px 6px 6px brown;
 }
 
 .blog-paper {
