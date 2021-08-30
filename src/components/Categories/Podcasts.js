@@ -1,11 +1,12 @@
 import React from 'react'
 
-import AudiotrackIcon from '@material-ui/icons/Audiotrack';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMusic } from '@fortawesome/free-solid-svg-icons'
 
 const Podcasts = () => {
     return (
         <div className="podcast-paper">
-           <AudiotrackIcon className="icon"/> 
+           <FontAwesomeIcon icon={faMusic} className="icon" size="3x"/>
            <h4>
                Podcasts
            </h4>

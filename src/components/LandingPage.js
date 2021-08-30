@@ -28,20 +28,23 @@ import WelcomeText from './WelcomeText';
 
 const drawerWidth = 240;
 
+const backgroundColor= "#100c08"
+const fontColor = "#fff"
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    backgroundColor: "white"
+    backgroundColor: backgroundColor
   },
   appBar: {
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    backgroundColor: "white",
-    color: "black",
-    boxShadow: "0px 0px white",
-    height: "10%"
+    backgroundColor: backgroundColor,
+    color: fontColor,
+    boxShadow: "0px 0px 0px #36454F",
+    height: "10px"
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
@@ -53,8 +56,9 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
-    fontFamily: "Rampart One, sans-serif"
-    
+    fontFamily: "Rampart One, sans-serif",
+    marginBottom: "10px",
+    height: "62px"
   },
   hide: {
     display: 'none',
