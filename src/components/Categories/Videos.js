@@ -7,9 +7,7 @@ const Videos = () => {
     return (
         <div className="video-paper">
             <FontAwesomeIcon icon={faVideo} className="icon" size="3x"/>
-            <h4>
-               Videos
-            </h4>
+            <h4>Videos</h4>
         </div>
     )
 }

@@ -7,9 +7,7 @@ const Podcasts = () => {
     return (
         <div className="podcast-paper">
            <FontAwesomeIcon icon={faMusic} className="icon" size="3x"/>
-           <h4>
-               Podcasts
-           </h4>
+           <h4>Podcasts</h4>
         </div>
     )
 }

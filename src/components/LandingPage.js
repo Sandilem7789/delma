@@ -19,15 +19,18 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import Grid from "@material-ui/core/Grid";
 
-/* MY COMPONENTS */
+/* Modal */
+import Modal from '@material-ui/core/Modal';
+import Backdrop from '@material-ui/core/Backdrop';
+import Fade from '@material-ui/core/Fade';
+
+/* CUSTOM COMPONENTS */
 import Videos from './Categories/Videos';
 import Blog from './Categories/Blog';
 import Podcasts from './Categories/Podcasts';
 import WelcomeText from './WelcomeText';
 
-
-const drawerWidth = 240;
-
+const drawerWidth = 0;
 const backgroundColor= "#100c08"
 const fontColor = "#fff"
 
@@ -94,6 +97,18 @@ const useStyles = makeStyles((theme) => ({
     }),
     marginRight: 0,
   },
+  //to be moved
+  modal: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  paper: {
+    backgroundColor: theme.palette.background.paper,
+    border: '2px solid #000',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
 }));
 
 export default function LandingPage() {
@@ -101,8 +116,16 @@ export default function LandingPage() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
-  const handleDrawerOpen = () => {
+  const handleOpen = () => {
     setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleDrawerOpen = () => {
+    //setOpen(true);
   };
 
   const handleDrawerClose = () => {
@@ -117,7 +140,6 @@ export default function LandingPage() {
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
-        
       >
         <Toolbar>
           <Typography variant="h3" noWrap className={classes.title}>
@@ -127,7 +149,7 @@ export default function LandingPage() {
             color="inherit"
             aria-label="open drawer"
             edge="end"
-            onClick={handleDrawerOpen}
+            onClick={handleOpen}
             className={clsx(open && classes.hide)}
           >
             <MenuSharp />
@@ -147,24 +169,48 @@ export default function LandingPage() {
                 </div>
             </Grid>
             <Grid item xs={12} md={12}>
-                <div>
+                <a href="http://localhost:3000/">
                     <Videos />
-                </div>
+                </a>
             </Grid>
             <Grid item xs={12} md={6}>
-                <div>
+                <a href="http://localhost:3000/">
                     <Blog />
-                </div>
+                </a>
             </Grid>
             <Grid item xs={12} md={6}>
-                <div>
+                <a href="http://localhost:3000/">
                     <Podcasts />
-                </div>
+                </a>
             </Grid>
         </Grid>
-        
+        <div>
+      <button type="button" onClick={handleOpen}>
+        react-transition-group
+      </button>
+      <Modal
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
+        className={classes.modal}
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={open}>
+          <div className={classes.paper}>
+            <h2 id="transition-modal-title">Transition modal</h2>
+            <p id="transition-modal-description">react-transition-group animates me.</p>
+          </div>
+        </Fade>
+      </Modal>
+    </div>
+ 
       </main>
-      <Drawer
+      {/*<Drawer
         className={classes.drawer}
         variant="persistent"
         anchor="right"
@@ -196,7 +242,7 @@ export default function LandingPage() {
             </ListItem>
           ))}
         </List>
-      </Drawer>
+      </Drawer>*/}
     </div>
   );
 }
