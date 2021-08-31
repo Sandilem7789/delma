@@ -71,3 +71,14 @@ a {
 a:hover {
   font-size: larger;
 }
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: aliceblue;
+}
+modal-paper {
+  padding: 20px;
+  background-color: #300c08;
+}
