@@ -82,3 +82,8 @@ modal-paper {
   padding: 20px;
   background-color: #300c08;
 }
+.modal-exit-icon {
+  color: #000;
+  display: flex;
+  justify-content: flex-end;
+}

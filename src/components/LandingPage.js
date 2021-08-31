@@ -14,6 +14,9 @@ import Grid from "@material-ui/core/Grid";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
+            /*Icons*/
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 /* CUSTOM COMPONENTS */
 import Videos from "./Categories/Videos";
@@ -79,14 +82,15 @@ const useStyles = makeStyles((theme) => ({
   //to be moved
   modal: {
     display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-end",
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
     border: "2px solid #000",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
+    height: "100vh",
+    width: "45vh",
   },
 }));
 
@@ -170,7 +174,10 @@ export default function LandingPage() {
           >
             <Fade in={open}>
               <div className={classes.paper}>
-                <h2 id='transition-modal-title'>Transition modal</h2>
+              <div className="modal-exit-icon">
+                <FontAwesomeIcon icon={faTimes} size="2x"/>
+              </div>
+                <h1 id='transition-modal-title'>Transition modal</h1>
                 <p id='transition-modal-description'>
                   react-transition-group animates me.
                 </p>
