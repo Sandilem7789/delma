@@ -86,4 +86,12 @@ modal-paper {
   color: #000;
   display: flex;
   justify-content: flex-end;
+  cursor: pointer;
+}
+.fa-times-icon {
+  border: 1px solid whitesmoke;
+  border-radius: 5px;
+}
+FontAwesomeIcon:hover {
+  cursor: pointer;
 }

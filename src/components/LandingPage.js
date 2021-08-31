@@ -87,10 +87,13 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     backgroundColor: theme.palette.background.paper,
     border: "2px solid #000",
+    borderRadius: "20px 0px 0px 20px",
+    outline: "none",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
     height: "100vh",
     width: "45vh",
+
   },
 }));
 
@@ -174,9 +177,22 @@ export default function LandingPage() {
           >
             <Fade in={open}>
               <div className={classes.paper}>
-              <div className="modal-exit-icon">
-                <FontAwesomeIcon icon={faTimes} size="2x"/>
-              </div>
+                <Grid container>
+                  <Grid item xs={11}>
+                    <h1 style={{color: "white"}}>Menu</h1>
+                  </Grid>
+                  <Grid item xs={1}>
+                    <div className="modal-exit-icon">
+                      <FontAwesomeIcon 
+                        icon={faTimes} 
+                        size="2x" 
+                        className="fa-times-icon"
+                        onClick={handleClose}
+                      />
+                    </div>
+                  </Grid>
+
+                </Grid>
                 <h1 id='transition-modal-title'>Transition modal</h1>
                 <p id='transition-modal-description'>
                   react-transition-group animates me.
