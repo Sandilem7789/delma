@@ -85,15 +85,14 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "flex-end",
   },
   paper: {
-    backgroundColor: theme.palette.background.paper,
-    border: "2px solid #000",
+    background: "rgba(20, 20, 20, 0.9)",
+    border: "1px solid #302",
     borderRadius: "20px 0px 0px 20px",
     outline: "none",
-    boxShadow: theme.shadows[5],
+    boxShadow: theme.shadows[6],
     padding: theme.spacing(2, 4, 3),
     height: "100vh",
     width: "45vh",
-
   },
 }));
 
