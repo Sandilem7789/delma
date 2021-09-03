@@ -6,7 +6,7 @@ import Fade from "@material-ui/core/Fade";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyle = makeStyles((theme) => {
-
+  
 })
 
 const OptionsModal = ({open, handleClose}) => {
@@ -26,8 +26,10 @@ const OptionsModal = ({open, handleClose}) => {
             >
             <Fade in={open}>
               <div className="modal-paper">
-                <h2><a>Home</a></h2>
-                
+                <h2 id='transition-modal-title'> modal</h2>
+                <p id='transition-modal-description'>
+                  Imported Modal
+                </p>
               </div>
             </Fade>
           </Modal>

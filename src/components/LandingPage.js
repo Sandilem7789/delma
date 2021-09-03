@@ -14,6 +14,7 @@ import Grid from "@material-ui/core/Grid";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
+import { Button } from "@material-ui/core";
             /*Icons*/
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
@@ -69,8 +70,11 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
-    marginRight: -drawerWidth,
+    paddingTop: theme.spacing(4),
+    paddingLeft: theme.spacing(7),
+    paddingRight: theme.spacing(7),
+    height: "100vh"
+
   },
   contentShift: {
     transition: theme.transitions.create("margin", {
@@ -139,7 +143,7 @@ export default function LandingPage() {
         })}
       >
         <div className={classes.drawerHeader} />
-        <Grid container spacing={3}>
+        <Grid container spacing={3} className="landing-badges">
           <Grid item xs={12}>
             <div>
               <WelcomeText />
@@ -178,7 +182,7 @@ export default function LandingPage() {
               <div className={classes.paper}>
                 <Grid container>
                   <Grid item xs={11}>
-                    <h1 style={{color: "white"}}>Menu</h1>
+                    <h1 style={{color: "white"}}></h1>
                   </Grid>
                   <Grid item xs={1}>
                     <div className="modal-exit-icon">
@@ -190,12 +194,31 @@ export default function LandingPage() {
                       />
                     </div>
                   </Grid>
-
                 </Grid>
-                <h1 id='transition-modal-title'>Transition modal</h1>
-                <p id='transition-modal-description'>
-                  react-transition-group animates me.
-                </p>
+                <br />
+                <div className="modal-links">
+                  <h1 style={{color: "white"}}>Home</h1>
+                  <h1 style={{color: "white"}}>About</h1>
+                  <h1 style={{color: "white"}}>Contact Us</h1>  
+                </div>
+                <Divider 
+                  style={{
+                    color: "white",
+                    marginBottom: "20px"
+                  }}
+                />
+                <Grid container align="center" spacing={2} className="modal-buttons">
+                  <Grid item xs={12}>
+                  <Button variant="outlined" color="primary">
+                      Login
+                    </Button>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Button variant="contained" color="primary">
+                      Hire a ReactJS Tutor
+                    </Button>
+                  </Grid>
+                </Grid>
               </div>
             </Fade>
           </Modal>

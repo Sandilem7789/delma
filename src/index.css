@@ -88,9 +88,20 @@ modal-paper {
   cursor: pointer;
   color: #fff
 }
+.modal-links {
+  text-shadow: 1px 1px 15px black;
+  background: rgba(25, 25, 25, 0.4);
+  padding: 2vmin;
+  text-align: center;
+  border-radius: 20px
+}
+.modal-buttons {
+  margin-top: 20px;
+}
 .fa-times-icon {
   border-radius: 5px;
 }
 FontAwesomeIcon:hover {
   cursor: pointer;
+  
 }
