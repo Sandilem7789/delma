@@ -83,13 +83,12 @@ modal-paper {
   background-color: #300c08;
 }
 .modal-exit-icon {
-  color: #000;
   display: flex;
   justify-content: flex-end;
   cursor: pointer;
+  color: #fff
 }
 .fa-times-icon {
-  border: 1px solid whitesmoke;
   border-radius: 5px;
 }
 FontAwesomeIcon:hover {
