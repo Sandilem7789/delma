@@ -26,6 +26,8 @@ import Podcasts from "./Categories/Podcasts";
 import WelcomeText from "./WelcomeText";
 
 const drawerWidth = 0;
+
+/*Colors*/
 const backgroundColor = "#100c08";
 const fontColor = "#fff";
 
