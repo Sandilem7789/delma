@@ -15,15 +15,22 @@ import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import { Button } from "@material-ui/core";
-            /*Icons*/
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
+
+/*Icons*/
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faNewspaper } from "@fortawesome/free-solid-svg-icons";
+import { faVideo } from "@fortawesome/free-solid-svg-icons";
+import { faMusic } from "@fortawesome/free-solid-svg-icons";
 
 /* CUSTOM COMPONENTS */
 import Videos from "./Categories/Videos";
 import Blog from "./Categories/Blog";
 import Podcasts from "./Categories/Podcasts";
 import WelcomeText from "./WelcomeText";
+
+/* Navigation */
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const drawerWidth = 0;
 
@@ -75,8 +82,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(4),
     paddingLeft: theme.spacing(7),
     paddingRight: theme.spacing(7),
-    height: "100vh"
-
+    height: "100vh",
   },
   contentShift: {
     transition: theme.transitions.create("margin", {
@@ -144,29 +150,61 @@ export default function LandingPage() {
           [classes.contentShift]: open,
         })}
       >
-        <div className={classes.drawerHeader} />
-        <Grid container spacing={3} className="landing-badges">
-          <Grid item xs={12}>
-            <div>
-              <WelcomeText />
-            </div>
+        <Router>
+          <div className={classes.drawerHeader} />
+          <Grid container spacing={3} className='landing-badges'>
+            <Grid item xs={12}>
+              <div>
+                <WelcomeText />
+              </div>
+            </Grid>
+            <Grid item xs={12} md={12}>
+              <Link to="/videos" exact>
+                  <div className='video-paper'>
+                    <FontAwesomeIcon
+                      icon={faVideo}
+                      className='icon'
+                      size='3x'
+                    />
+                    <h4>Videos</h4>
+                  </div>
+              </Link>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Link>
+                <div className='blog-paper'>
+                  <FontAwesomeIcon
+                    icon={faNewspaper}
+                    className='icon'
+                    size='3x'
+                  />
+                  <h4>Blog</h4>
+                </div>
+              </Link>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Link>
+                <div className='podcast-paper'>
+                  <FontAwesomeIcon icon={faMusic} className='icon' size='3x' />
+                  <h4>Podcasts</h4>
+                </div>
+              </Link>
+            </Grid>
           </Grid>
-          <Grid item xs={12} md={12}>
-            <a href='http://localhost:3000/'>
-              <Videos />
-            </a>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <a href='http://localhost:3000/'>
-              <Blog />
-            </a>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <a href='http://localhost:3000/'>
-              <Podcasts />
-            </a>
-          </Grid>
-        </Grid>
+          <Switch>
+            <Route>
+              <Route path="/videos">
+                <Videos/>
+              </Route>
+              <Route path="/blog">
+                <Blog/>
+              </Route>
+              <Route path="/podcasts">
+                <Podcasts/>
+              </Route>
+            </Route>
+          </Switch>
+        </Router>
         <div>
           <Modal
             aria-labelledby='transition-modal-title'
@@ -184,40 +222,45 @@ export default function LandingPage() {
               <div className={classes.paper}>
                 <Grid container>
                   <Grid item xs={11}>
-                    <h1 style={{color: "white"}}></h1>
+                    <h1 style={{ color: "white" }}></h1>
                   </Grid>
                   <Grid item xs={1}>
-                    <div className="modal-exit-icon">
-                      <FontAwesomeIcon 
-                        icon={faTimes} 
-                        size="2x" 
-                        className="fa-times-icon"
+                    <div className='modal-exit-icon'>
+                      <FontAwesomeIcon
+                        icon={faTimes}
+                        size='2x'
+                        className='fa-times-icon'
                         onClick={handleClose}
                       />
                     </div>
                   </Grid>
                 </Grid>
                 <br />
-                <div className="modal-links">
-                  <h1 style={{color: "white"}}>Home</h1>
-                  <h1 style={{color: "white"}}>About</h1>
-                  <h1 style={{color: "white"}}>Contact Us</h1>  
+                <div className='modal-links'>
+                  <h1 style={{ color: "white" }}>Home</h1>
+                  <h1 style={{ color: "white" }}>About</h1>
+                  <h1 style={{ color: "white" }}>Contact Us</h1>
                 </div>
-                <Divider 
+                <Divider
                   style={{
                     color: "white",
-                    marginBottom: "20px"
+                    marginBottom: "20px",
                   }}
                 />
-                <Grid container align="center" spacing={2} className="modal-buttons">
+                <Grid
+                  container
+                  align='center'
+                  spacing={2}
+                  className='modal-buttons'
+                >
                   <Grid item xs={12}>
-                  <Button variant="outlined" color="primary">
+                    <Button variant='outlined' color='primary'>
                       Login
                     </Button>
                   </Grid>
                   <Grid item xs={12}>
-                    <Button variant="contained" color="primary">
-                      Hire a ReactJS Tutor
+                    <Button variant='contained' color='primary'>
+                      Hire a Tutor
                     </Button>
                   </Grid>
                 </Grid>
