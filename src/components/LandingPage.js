@@ -150,8 +150,8 @@ export default function LandingPage() {
           [classes.contentShift]: open,
         })}
       >
-        <Router>
-          <div className={classes.drawerHeader} />
+        <Router className={classes.drawerHeader}>
+          <div  />
           <Grid container spacing={3} className='landing-badges'>
             <Grid item xs={12}>
               <div>
